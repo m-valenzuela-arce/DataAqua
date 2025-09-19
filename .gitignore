@@ -1,0 +1,36 @@
+@'
+# Entornos / caches
+env/
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# Datos (fuera de Git)
+data/
+*.csv
+*.tsv
+*.parquet
+*.h5
+*.zip
+*.tar*
+*.nc
+
+# Outputs (puedes versionar algunos si quieres)
+outputs/
+
+# OneDrive / Windows
+~$*
+*.tmp
+*.lock
+desktop.ini
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+'@ | Out-File -Encoding UTF8 .gitignore
