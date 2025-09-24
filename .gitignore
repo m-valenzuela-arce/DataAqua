@@ -1,36 +1,54 @@
-@'
-# Entornos / caches
-env/
-venv/
-.venv/
+# ========================================
+#  Archivos y carpetas a ignorar en DataAqua
+# ========================================
+
+# Archivos temporales de Jupyter
+.ipynb_checkpoints/
+
+# Archivos Python compilados
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
-# Jupyter
-.ipynb_checkpoints/
-*.nbconvert.ipynb
-
-# Datos (fuera de Git)
-data/
-#*.csv
-*.tsv
-*.parquet
-*.h5
-*.zip
-*.tar*
-*.nc
-
-# Outputs (puedes versionar algunos si quieres)
-outputs/
-
-# OneDrive / Windows
-~$*
-*.tmp
-*.lock
-desktop.ini
+# Archivos de sistema
+.DS_Store
 Thumbs.db
+*.swp
 
-# IDE
+# Virtual envs locales (no confundir con env/ de configuración)
+venv/
+.env/
+.venv/
+
+# Archivos grandes o temporales
+*.log
+*.tmp
+
+# ========================================
+#  Carpetas del proyecto
+# ========================================
+
+# Queremos que estas carpetas SÍ se suban, 
+# pero sin su basura temporal
+!data/
+!outputs/
+!notebooks/
+!env/
+
+# Ignorar dentro de env/ todo excepto yml/requirements
+env/*
+!env/*.yml
+!env/*.yaml
+!env/*.txt
+
+# ========================================
+#  Otros (ajusta si lo necesitas)
+# ========================================
+
+# Archivos de VSCode/IDE
 .vscode/
-.idea/
-'@ | Out-File -Encoding UTF8 .gitignore
+*.code-workspace
+
+# Archivos de backup
+*~
